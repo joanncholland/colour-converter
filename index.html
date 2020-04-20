@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Converter</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Colour Converter</h1>
+
+    <div>
+        <div>
+            <p>FROM</p>
+            <select id="convertFromSelect">
+                <option value="hex">hex</option>
+                <option value="rgb">rgb</option>
+                <option value="hsl">hsl</option>
+                <option value="cmyk">cmyk</option>
+            </select>
+            <input autofocus="autofocus" type="text" name="inputValue" placeholder="Enter value" id="inputValue">
+        </div>
+        <div>
+            <p>TO</p>
+            <select id="convertToSelect">
+                <option value="hex">hex</option>
+                <option value="rgb">rgb</option>
+                <option value="hsl">hsl</option>
+                <option value="cmyk">cmyk</option>
+            </select>
+
+            <p><span id="valueConverted"></span></p>
+        </div>
+    </div>
+
+    <button type="button" onclick="convert()">CONVERT</button>
+
+    <div id="schemePrompt" style="display: none;">
+        <p>Would you like to generate a colour scheme from that colour?</p>
+        <div>
+            <button type="button" onclick="showGenerator()">YES</button>
+            <button type="button" onclick="removePrompt()">NO</button>
+        </div>
+    </div>
+
+    <div id="colourSchemeGenerator" style="display: none;">
+        <div>
+            <h1>Colour Scheme Generator</h1>
+            <p>Select the theme</p>
+            <select id="themeSelect">
+                <option value="monochrome">monochrome</option>
+                <option value="monochrome-dark">monochrome-dark</option>
+                <option value="monochrome-light">monochrome-light</option>
+                <option value="analogic">analogic</option>
+                <option value="complement">complement</option>
+                <option value="analogic-complement">analogic-complement</option>
+                <option value="triad">triad</option>
+                <option value="quad">monochrome-light</option>
+            </select>
+            <p>Select the number of colours</p>
+            <select id="numberSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <button type="button" onclick="generateColourScheme()">GENERATE</button>
+        </div>
+        <div>
+            
+        </div>
+        
+    </div>
+
+    
+
+    <div id="colours">
+        <div>
+            <div id="colour1"></div>
+            <div id="colour2"></div>
+            <div id="colour3"></div>
+            <div id="colour4"></div>
+            <div id="colour5"></div>
+        </div>
+        
+    </div>
+
+    <script src="./jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
